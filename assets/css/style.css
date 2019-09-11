@@ -1,11 +1,15 @@
 
 #collector {
     color: white;
-    padding: 25px 10px 25px 10px;
+    padding: 0px 10px 25px 20px;
     background-color: #cd7037;
 }
 #rules {
     background-color: #fbe6ce;
+    color: #aac698;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 0px 0px 0px 20px;
 }
 #numSection {
     background-color: #53ca87;
@@ -19,6 +23,23 @@
 #scoreboard{
     background-color: #3dfefb;
     padding: 25px 45px 45px 25px;
+    margin-left: 10px ;
 }
 
+img {
+    padding: 15px;
+    height: 150px;
+   width:150px;
+}
+h4 {
+    background-color: #22a195;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+}
 
+#score {
+    font-size: 35px; 
+    background-color: #22a195;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+}
