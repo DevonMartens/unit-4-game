@@ -1,0 +1,24 @@
+
+#collector {
+    color: white;
+    padding: 25px 10px 25px 10px;
+    background-color: #cd7037;
+}
+#rules {
+    background-color: #fbe6ce;
+}
+#numSection {
+    background-color: #53ca87;
+}
+
+#targetNumber{
+    background-color: #53ca87;
+    padding: 25px 45px 45px 25px;
+}
+
+#scoreboard{
+    background-color: #3dfefb;
+    padding: 25px 45px 45px 25px;
+}
+
+
