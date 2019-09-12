@@ -6,7 +6,7 @@
 }
 #rules {
     background-color: #fbe6ce;
-    color: #aac698;
+    color:#4aa761;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     padding: 0px 0px 0px 20px;
@@ -15,9 +15,10 @@
     background-color: #53ca87;
 }
 
-#targetNumber{
+#Number{
     background-color: #53ca87;
     padding: 25px 45px 45px 25px;
+    color: #765588;
 }
 
 #scoreboard{

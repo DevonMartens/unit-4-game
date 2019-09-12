@@ -1,63 +1,83 @@
-var scoreTarget = 0;
-var scoreTally = 0;
+$(document).ready(function() { 
+    console.log("DOM fully loaded and parsed");
+    let gameWins = 0;
+    let gameLosses = 0;
+    let score = 0;
+    let veggie = 0;
+    let lizard = 0;
+    let colorBug = 0;
+    let rockBug = 0;
+    let computerNum = 0;
+    // displaying initial score of 0
+    $("#score").html(score);
+ 
+    const generateRandomNum = function() {
+        let random = Math.floor(Math.random() * 100 + 19);
+        computerNum += random;
+        return random;
+    }
 
-var numberOfGems = 4;
-var assignedGemValue = [];
-var gems = ["assets/images/gem-0.png", "assets/images/gem-1.png", "assets/images/gem-2.png", "assets/images/gem-3.png"];
+    // Generating random number to match
+    $("#Number").html(generateRandomNum());
 
-var wins = 0;
-var losses = 0;
 
-var main = $("body");
+   var generateCrystalNum = function() {
+        var random = Math.floor(Math.random() * 12 + 1);
+        return random;
+    }
 
-$(document).ready(function () {
+    // generating random numbers for each crystal and assigning their values to declared variables above
+    const initialCrystalNum = function() {
+        veggie += generateCrystalNum();
+        lizard += generateCrystalNum();
+        colorBug += generateCrystalNum();
+        rockBug += generateCrystalNum();
+    }
 
-    resetGame();
 
-    $(".points").click(function () {
-        var currentGemValue = ($(this).attr("scoreTally-value"));
-        console.log("clicked " + currentGemValue);
-
-        currentGemValue = parseInt(currentGemValue);
-        scoreTally += currentGemValue;
-        console.log("current score: " + scoreTally);
-        $("#progressToTarget").text("Your total score is: " + scoreTally);
-        // W/L logic
-        if (scoreTally === scoreTarget) {
-            wins++;
-            $("#gameWins").text("Wins: " + wins);
-            resetGame();
-        } else if (scoreTally >= scoreTarget) {
-            losses++;
-            $("#gameLosses").text("Losses: " + losses);
-            resetGame();
+    initialCrystalNum();
+    // assigning value of button clicked to correct crystal. 
+    $("button").on("click", function() {
+        if(this.id === "veggie1") {
+            score += veggie;
+        } else if(this.id === "lizard1") {
+            score += lizard;
+        } else if(this.id === "colorBug1") {
+            score += colorBug;
+        } else if(this.id === "rockBug1") {
+            score += rockBug;
         }
+        // setting yourTotalScore equal to the value of any button pressed.
+        $("#score").html(score);
+        winOrLose();
     });
 
+    const winOrLose = function() {
+        if(score === computerNum) {
+            gameWins ++;
+            $("#win").html(gameWins);
+            alert("You win!");
+            reset();   
+
+        } else if(yscore > computerNum) {
+            gameLosses ++;
+            $("#loss").html(gameLosses);
+            alert("You lose.");
+            reset();
+        }
+    }
+    
+    // resets all values back to 0 for user to play again.
+    const reset = function() {  
+       score = 0;
+        $("#score").html(score);
+        veggie = 0;
+        lizard = 0;
+        colorBug = 0;
+        rockBug = 0;
+        computerNum = 0;
+        initialCrystalNum();
+        $("#randomNum").html(computerNum += generateRandomNum());
+    }
 });
 
-function resetGame() {
-    // regenerate targetNumber
-    scoreTarget = Math.floor((Math.random() * 120) + 19)
-    $("#targetNumber").text("Target: " + scoreTarget);
-    console.log("scoreTarget: " + scoreTarget);
-    // reset scoreTally
-    scoreTally = 0;
-    $("#progressToTarget").text("Your total score is: " + scoreTally);
-    console.log("scoreTally: " + scoreTally);
-    // reset gem images
-    $("#gem-images").empty();
-    var img = main.find("#gem-images");
-
-    for (i = 0; i < gems.length; i++) {
-        // create the point values for the gem images
-        assignedGemValue[i] = Math.floor((Math.random() * 12) + 1);
-
-        var gemImg = $("<img>");
-        gemImg.addClass("col-3 points");
-        gemImg.attr("src", gems[i]);
-        gemImg.attr("scoreTally-value",assignedGemValue[i]);
-        img.append(gemImg);
-    }
-    console.log("assignedGemValue: " + assignedGemValue)
-}

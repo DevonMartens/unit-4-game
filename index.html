@@ -15,7 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	 <!-- JQuery -->
-  	<script src="https://code.jquery.com/jquery.js"></script>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      
 
 </head>
 <body background="assets/images/weather.png">
@@ -39,7 +40,7 @@
 <br>
 <div class="row">
         <div id="numSection" class="col-md-3">
-                <h3 id="scoreNumber">00</h3>
+                <h3 id="Number">00</h3>
                 <br>
                 <br>
                 <br>
@@ -54,16 +55,16 @@
 <div id="gem images" class="row">
         <!-- insert the gem images here -->
         <div class="col-md-2">
-              <button id="veggie"><img src="assets/images/green.jpg" alt="veggie"></button>
+              <button id="veggie1"><img src="assets/images/green.jpg" alt="veggie"></button>
               </div>
               <div class="col-md-2">
-                    <button id="lizard"><img src="assets/images/lizard.jpg" alt="lizard"></button>
+                    <button id="lizard1"><img src="assets/images/lizard.jpg" alt="lizard"></button>
               </div>
               <div class="col-md-2">
-                    <button id="colorBug"><img src="assets/images/colorful_bee.jpg" alt="colorBug"></button>
+                    <button id="colorBug1"><img src="assets/images/colorful_bee.jpg" alt="colorBug"></button>
               </div> 
               <div class="col-md-2">
-                    <button id="rockBug"><img src="assets/images/rockbug.jpg" alt="rockBug"></button>
+                    <button id="rockBug1"><img src="assets/images/rockbug.jpg" alt="rockBug"></button>
                   </div>
             </div>
             <div class="row">
@@ -72,12 +73,13 @@
             </div>
         </div>
         <div class="row">
-                <div id="score" class="col-md-3">
-                <p>0</p>
+                <div class="col-md-3">
+                <p id="score">0</p>
                 <br>
                 <br>
             </div>
         </div>
+        <script src="assets/javascript/game.js"></script>
         <footer></footer>
 </body>
 </html>
