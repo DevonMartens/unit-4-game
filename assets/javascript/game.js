@@ -21,21 +21,21 @@ $(document).ready(function() {
     $("#Number").html(generateRandomNum());
 
 
-   var generateCrystalNum = function() {
+   var generateRockVal = function() {
         var random = Math.floor(Math.random() * 12 + 1);
         return random;
     }
 
     // generating random numbers for each crystal and assigning their values to declared variables above
-    const initialCrystalNum = function() {
-        veggie += generateCrystalNum();
-        lizard += generateCrystalNum();
-        colorBug += generateCrystalNum();
-        rockBug += generateCrystalNum();
+    const initializeRockValue = function() {
+        veggie += generateRockVal();
+        lizard += generateRockVal();
+        colorBug += generateRockVal();
+        rockBug += generateRockVal();
     }
 
 
-    initialCrystalNum();
+    initializeRockValue();
     // assigning value of button clicked to correct crystal. 
     $("button").on("click", function() {
         if(this.id === "veggie1") {
@@ -47,7 +47,7 @@ $(document).ready(function() {
         } else if(this.id === "rockBug1") {
             score += rockBug;
         }
-        // setting yourTotalScore equal to the value of any button pressed.
+        // setting equal to the value of any button pressed.
         $("#score").html(score);
         winOrLose();
     });
@@ -59,7 +59,7 @@ $(document).ready(function() {
             alert("You win!");
             reset();   
 
-        } else if(yscore > computerNum) {
+        } else if(score > computerNum) {
             gameLosses ++;
             $("#loss").html(gameLosses);
             alert("You lose.");
@@ -67,7 +67,7 @@ $(document).ready(function() {
         }
     }
     
-    // resets all values back to 0 for user to play again.
+    // resets all
     const reset = function() {  
        score = 0;
         $("#score").html(score);
@@ -76,7 +76,7 @@ $(document).ready(function() {
         colorBug = 0;
         rockBug = 0;
         computerNum = 0;
-        initialCrystalNum();
+        initializeRockValue();
         $("#randomNum").html(computerNum += generateRandomNum());
     }
 });
