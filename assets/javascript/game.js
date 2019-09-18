@@ -1,5 +1,5 @@
 $(document).ready(function() { 
-    console.log("DOM fully loaded and parsed");
+    console.log("ready");
     let gameWins = 0;
     let gameLosses = 0;
     let score = 0;
