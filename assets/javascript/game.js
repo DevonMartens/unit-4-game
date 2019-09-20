@@ -8,25 +8,25 @@ $(document).ready(function() {
     let colorBug = 0;
     let rockBug = 0;
     let computerNum = 0;
-    // displaying initial score of 0
+    // displaying score of zero used let so variables can be changed
     $("#score").html(score);
- 
+ //generated goal number constistent through game
     const generateRandomNum = function() {
         let random = Math.floor(Math.random() * 100 + 19);
         computerNum += random;
         return random;
     }
 
-    // Generating random number to match
+    // adding number to html
     $("#Number").html(generateRandomNum());
 
-
+//adding values to crystals consistent through game
    var generateRockVal = function() {
         var random = Math.floor(Math.random() * 12 + 1);
         return random;
     }
 
-    // generating random numbers for each crystal and assigning their values to declared variables above
+    // adding consistent numbers to each rock
     const initializeRockValue = function() {
         veggie += generateRockVal();
         lizard += generateRockVal();
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 
     initializeRockValue();
-    // assigning value of button clicked to correct crystal. 
+    // assigning buttons to each id 
     $("button").on("click", function() {
         if(this.id === "veggie1") {
             score += veggie;
@@ -47,10 +47,12 @@ $(document).ready(function() {
         } else if(this.id === "rockBug1") {
             score += rockBug;
         }
-        // setting equal to the value of any button pressed.
+        // adding score to visual calling win or lose function
         $("#score").html(score);
         winOrLose();
     });
+    
+  //score  = number = win
 
     const winOrLose = function() {
         if(score === computerNum) {
@@ -58,7 +60,7 @@ $(document).ready(function() {
             $("#win").html(gameWins);
             alert("You win!");
             reset();   
-
+//score gose over loose
         } else if(score > computerNum) {
             gameLosses ++;
             $("#loss").html(gameLosses);
@@ -67,7 +69,7 @@ $(document).ready(function() {
         }
     }
     
-    // resets all
+    // resets game
     const reset = function() {  
        score = 0;
         $("#score").html(score);
