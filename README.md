@@ -1,6 +1,6 @@
 # unit-4-game
 
-This repo contains the Ga Tech's coding boot camp's Homework for Unit 4.
+Sample of student repository code. In jQuery.
 
 This app uses css, HTML and JQuery. JQuery is a Javascript library the purpose of jQuery is to "write less, do more" with Javascript code making it easier to use JavaScript on your website. jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. -W3schools
 
