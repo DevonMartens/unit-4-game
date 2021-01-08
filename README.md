@@ -1,10 +1,11 @@
 # unit-4-game
 
-Sample of student repository code. In jQuery.
-
-This app uses css, HTML and JQuery. JQuery is a Javascript library the purpose of jQuery is to "write less, do more" with Javascript code making it easier to use JavaScript on your website. jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. -W3schools
 
 
+
+Test it out here:
+
+https://devonmartens.github.io/unit-4-game/
 Here's how the app works:
 
 
@@ -25,10 +26,13 @@ When the game begins again, the player should see a new random number. Also, all
 The app shows the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
 
-Key Topics cover in Unit 4:
+
+Things I learned building this:
 
 jQuery
 DOM traversal and manipulation
 Event handling
 this
 data-* attributes
+
+This app uses css, HTML and JQuery. JQuery is a Javascript library the purpose of jQuery is to "write less, do more" with Javascript code making it easier to use JavaScript on your website. jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code. -W3schools
